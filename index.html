@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamFlare</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Hotstar">
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#featured-movies">Movies</a>
+      <a href="#popular-shows">TV Shows</a>
+      <a href="#sports">Sports</a>
+      <a href="#news">News</a>
+      <a href="/login.html">Login</a>
+    </div>
+  </nav>
+
+
+
+
+<!-- React & Babel CDN -->
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- React Root -->
+<div id="react-popup-root"></div>
+
+<!-- React Popup Script -->
+<script type="text/babel">
+  function PopupModal() {
+    const [visible, setVisible] = React.useState(true);
+
+    if (!visible) return null;
+
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0, left: 0,
+        width: '100%', height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 9999
+      }}>
+        <div style={{
+          background: 'rgba(0, 0, 0, 0.5)',
+          padding: '60px 40px',
+          borderRadius: '30px',
+          textAlign: 'center',
+          maxWidth: '600px',
+          width: '90%',
+          color: 'white',
+          backdropFilter: 'blur(15px)',
+          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.6)',
+          fontSize: '1.2rem'
+        }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '20px' }}>🎬 Welcome to StreamFlare!</h2>
+          <p style={{ marginBottom: '30px' }}>
+            Dive into the world of unlimited entertainment with movies, web series, sports & more.
+          </p>
+          <button 
+             onMouseEnter={(e) => {
+             e.target.style.backgroundColor = '#0056d2'; // Darker blue on hover
+             e.target.style.transform = 'scale(1.05)';
+           }}
+           onMouseLeave={(e) => {
+           e.target.style.backgroundColor = '#007bff';
+           e.target.style.transform = 'scale(1)';
+          }}
+           onClick={() => setVisible(false)}
+           style={{
+           padding: '14px 30px',
+           border: 'none',
+           backgroundColor: '#007bff',
+           color: 'white',
+           borderRadius: '8px',
+           cursor: 'pointer',
+          fontSize: '1rem',
+           transition: 'all 0.3s ease'
+          }}
+          >
+           Start Watching
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById('react-popup-root'));
+  root.render(<PopupModal />);
+</script>
+
+
+
+  
+
+
+  <!-- Banner -->
+  <section class="banner">
+    <img src="/images/slider 1.PNG" alt="Banner" class="banner-image">
+    <div class="banner-content">
+      <h1>Welcome to StreamFlare</h1>
+      <p>Stream your favorite movies and shows</p>
+      <a href="#featured-movies" class="watch-btn">Start Watching</a>
+    </div>
+  </section>
+
+
+  <!-- Featured Movies -->
+  <section id="featured-movies" class="movies">
+    <h2>Featured Movies</h2>
+    <div class="movie-list">
+      <div class="movie-card">
+        <img src="/images/poster 1.png" alt="Movie 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="movie-info">
+          <h3>Loki</h3>
+          <p>Action, Drama</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="/images/poster 2.png" alt="Movie 2">
+          <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+            <p class="watch-now">Watch Now</p>
+          </a>
+        </a>
+        <div class="movie-info">
+          <h3>Mulan</h3>
+          <p>Comedy, Romance</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="/images/poster 8.png" alt="Movie 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="movie-info">
+          <h3>Pixar Soul</h3>
+          <p>Comedy, Romance</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="/images/poster 9.png" alt="Movie 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="movie-info">
+          <h3>Raya</h3>
+          <p>Comedy, Romance</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="/images/poster 10.png" alt="Movie 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="movie-info">
+          <h3>Luca</h3>
+          <p>Comedy, Drama</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="/images/poster 11.png" alt="Movie 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="movie-info">
+          <h3>Ford V Ferrari</h3>
+          <p>Comedy, Romance</p>
+        </div>
+      </div>
+      <div class="movie-card">
+        <img src="/images/poster 12.png" alt="Movie 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="movie-info">
+          <h3>Dark Phoenix</h3>
+          <p>Comedy, Drama</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Sports Section -->
+ 
+  <section id="sports" class="sports">
+    <h2>Featured Sports</h2>
+    <div class="sports-list">
+      <div class="sports-card">
+        <img src="/images/sports1 (1).jpg" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>CKS vs RCB</h3>
+          <p>Liver Pool</p>
+        </div>
+      </div>
+      <div class="sports-card">
+        <img src="/images/sports2.jpg" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>DC vs GT</h3>
+          <p>Coming Soon</p>
+        </div>
+      </div>
+      <div class="sports-card">
+        <img src="/images/sports3.jpg" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>India VS Bandesh</h3>
+          <p>Live Now</p>
+        </div>
+      </div>
+      <div class="sports-card">
+        <img src="/images/sports4.jpg" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>India VS Pak</h3>
+          <p>Goal to win</p>
+        </div>
+      </div>
+      <div class="sports-card">
+        <img src="/images/sports5.jpg" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>Test Match</h3>
+          <p>24 x 7 Test</p>
+        </div>
+      </div>
+      <div class="sports-card">
+        <img src="/images/sports6.jpg" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>MI VS RR</h3>
+          <p>In Focus</p>
+        </div>
+      </div>
+      <div class="sports-card">
+        <img src="/images/sports7.jpg" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="sports-info">
+          <h3>LSG VS KKR</h3>
+          <p>Highlight</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular shows -->
+  <section id="popular-shows" class="shows">
+    <h2>Popular TV Shows</h2>
+    <div class="shows-list">
+      <div class="shows-card">
+        <img src="/images/poster 2.png" alt="Sport 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>Mulan</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+      <div class="shows-card">
+        <img src="/images/poster 3.png" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>The Falcon</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+      <div class="shows-card">
+        <img src="/images/poster 4.png" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>Avengers</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+      <div class="shows-card">
+        <img src="/images/poster 5.png" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>Thor Ragnarok</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+      <div class="shows-card">
+        <img src="/images/poster 6.png" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>Avengers</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+      <div class="shows-card">
+        <img src="/images/poster 7.png" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>Salazar's Revenge</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+      <div class="shows-card">
+        <img src="/images/poster 8.png" alt="Sport 2">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="shows-info">
+          <h3>Soul</h3>
+          <p>Streaming Now</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending News -->
+
+  <section id="news" class="news">
+    <h2>Live Trending News</h2>
+    <div class="news-list">
+      <div class="news-card">
+        <img src="/images/news5.jpeg" alt="News 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="news-info">
+          <h3>Sport Event 1</h3>
+          <p>Live Now</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="/images/news2.jpg" alt="News 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="news-info">
+          <h3>Prime Time 24 x 7</h3>
+          <p>Live Now</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="/images/news3.jpg" alt="News 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="news-info">
+          <h3>Ajj Tak</h3>
+          <p>Live Now</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="/images/news4.jpg" alt="News 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="news-info">
+          <h3>India Today</h3>
+          <p>Live Now</p>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="/images/news7.jpeg" alt="News 1">
+        <a href="https://youtu.be/aninoDcPWo4" target="_blank">
+          <p class="watch-now">Watch Now</p>
+        </a>
+        <div class="news-info">
+          <h3>Times of India</h3>
+          <p>Live Now</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Hotstar Clone. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
